@@ -1,23 +1,13 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
-import { Provider as PaperProvider, Button, Title } from 'react-native-paper';
+import { Provider as PaperProvider } from 'react-native-paper';
+import Counter from './Counter';
 
 const instructions = Platform.select({
   ios: 'Actually on iOS',
   android: 'Actually on Android',
   web: 'Actually on Web'
 });
-
-function Counter() {
-  const [counter, setCounter] = useState(0);
-
-  return (
-    <View style={{ alignItems: 'center' }}>
-      <Title>{counter}</Title>
-      <Button icon={'add-a-photo'} onPress={() => setCounter(counter + 1)}>Increment</Button>
-    </View>
-  )
-}
 
 function Welcome() {
   return (
