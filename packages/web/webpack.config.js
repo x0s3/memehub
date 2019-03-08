@@ -44,9 +44,9 @@ module.exports = {
                 },
             },
             {
-                test: /\.(ttf|eot|svg|gif|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
                 loader: 'file-loader',
-            }
+            },
         ],
     },
     resolve: {
@@ -58,6 +58,7 @@ module.exports = {
 
     // Development server config
     devServer: {
+        host: '0.0.0.0',
         contentBase: [path.join(__dirname, 'public')],
         historyApiFallback: true,
     },

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 import { Provider as PaperProvider } from 'react-native-paper';
 import Counter from './Counter';
@@ -6,7 +6,6 @@ import Counter from './Counter';
 const instructions = Platform.select({
   ios: 'Actually on iOS',
   android: 'Actually on Android',
-  web: 'Actually on Web'
 });
 
 function Welcome() {
@@ -23,9 +22,7 @@ function Welcome() {
 export default function App() {
   return (
     <PaperProvider>
-      <Fragment>
-        <Welcome />
-      </Fragment>
+      <Welcome />
     </PaperProvider>
   )
 }
