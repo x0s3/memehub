@@ -1,8 +1,9 @@
-import { AppRegistry } from 'react-native'
+import { AppRegistry } from 'react-native';
 
-import App from 'components/src/App'
+import App from 'components/src/App';
 
-AppRegistry.registerComponent('myprojectname', () => App)
-AppRegistry.runApplication('myprojectname', {
+AppRegistry.registerComponent('memehub', () => App);
+
+AppRegistry.runApplication('memehub', {
   rootTag: document.getElementById('root'),
-})
+});

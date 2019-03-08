@@ -1,4 +1,5 @@
 const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -8,8 +9,9 @@ module.exports = {
 
     // Path for the output files
     output: {
-        path: path.join(__dirname, 'dist'),
         filename: 'app.bundle.js',
+        chunkFilename: 'app.bundle.js',
+        path: path.join(__dirname, 'dist'),
     },
 
     // Enable source map support
@@ -57,5 +59,9 @@ module.exports = {
     devServer: {
         contentBase: [path.join(__dirname, 'public')],
         historyApiFallback: true,
+    },
+
+    optimization: {
+        minimizer: [new TerserPlugin()],
     },
 };
