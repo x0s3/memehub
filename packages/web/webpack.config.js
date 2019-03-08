@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
     mode: 'development',
 
-    // Path to the entry file, change it according to the path you have
+    // Path to the entry file
     entry: path.join(__dirname, 'src/index.js'),
 
     // Path for the output files
@@ -28,7 +28,7 @@ module.exports = {
                         babelrc: false,
                         configFile: false,
 
-                        // The configration for compilation
+                        // The configuration for compilation
                         presets: [
                             ['@babel/preset-env', { useBuiltIns: 'usage' }],
                             '@babel/preset-react',
@@ -42,7 +42,7 @@ module.exports = {
                 },
             },
             {
-                test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
+                test: /\.(ttf|eot|svg|gif|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 loader: 'file-loader',
             }
         ],
@@ -55,7 +55,7 @@ module.exports = {
 
     // Development server config
     devServer: {
-        contentBase: [path.join(__dirname, '/public')],
+        contentBase: [path.join(__dirname, 'public')],
         historyApiFallback: true,
     },
 };

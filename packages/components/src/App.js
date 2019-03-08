@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 import { Provider as PaperProvider, Button, Title } from 'react-native-paper';
 
@@ -14,7 +14,7 @@ function Counter() {
   return (
     <View style={{ alignItems: 'center' }}>
       <Title>{counter}</Title>
-      <Button onPress={() => setCounter(counter + 1)}>Increment</Button>
+      <Button icon={'add-a-photo'} onPress={() => setCounter(counter + 1)}>Increment</Button>
     </View>
   )
 }
@@ -33,17 +33,9 @@ function Welcome() {
 export default function App() {
   return (
     <PaperProvider>
-      <React.Fragment>
-        {Platform.OS === 'web' ? (
-          <style type="text/css">{`
-        @font-face {
-          font-family: 'MaterialIcons';
-          src: url(${require('react-native-vector-icons/Fonts/MaterialIcons.ttf')}) format('truetype');
-        }
-      `}</style>
-        ) : null}
+      <Fragment>
         <Welcome />
-      </React.Fragment>
+      </Fragment>
     </PaperProvider>
   )
 }
