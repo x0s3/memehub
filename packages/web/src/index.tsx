@@ -1,7 +1,7 @@
 import { ComponentType } from 'react';
 import { AppRegistry } from 'react-native';
 
-import App from 'components/src/components/App';
+import Root from 'components/src/components';
 
 const render = (AppComponent: ComponentType) => {
   AppRegistry.registerComponent('memehub', () => AppComponent);
@@ -10,4 +10,4 @@ const render = (AppComponent: ComponentType) => {
   });
 }
 
-render(App);
+render(Root);
