@@ -1,8 +1,8 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, ReactElement } from 'react';
 import { StyleSheet, Dimensions } from 'react-native';
 import { FAB } from 'react-native-paper';
 
-export default function Fab() {
+export default function Fab(): ReactElement {
     const [open, setOpen] = useState<boolean>(false);
 
     return (

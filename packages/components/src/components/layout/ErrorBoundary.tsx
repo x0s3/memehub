@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, ReactElement, ReactNode } from 'react';
 import { View, Image } from 'react-native';
 import { Title } from 'react-native-paper'
 
@@ -6,7 +6,7 @@ interface State {
     hasError: boolean
 }
 
-const ErrorPage = () => (
+const ErrorPage = (): ReactElement => (
     <View style={{ alignItems: 'center' }}>
         <Image
             resizeMode={'center'}
@@ -32,7 +32,7 @@ export default class ErrorBoundary extends Component<{}, State> {
         console.log(error, info);
     }
 
-    render() {
+    render(): ReactElement | ReactNode {
         if (this.state.hasError) return <ErrorPage />
         return this.props.children;
     }

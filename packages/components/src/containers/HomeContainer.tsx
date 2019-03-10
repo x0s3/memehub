@@ -5,7 +5,7 @@ import CounterMagic from '../components/CounterMagic';
 export default function HomeContainer() {
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <View style={{ flex: 1, backgroundColor: '#fff' }}>
+            <View style={{ flex: 1 }}>
                 <CounterMagic />
             </View>
         </SafeAreaView>

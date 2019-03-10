@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, ReactElement } from 'react';
 import { BottomNavigation } from 'react-native-paper';
 import HomeContainer from '../../containers/HomeContainer';
 import YourMemesContainer from '../../containers/YourMemesContainer';
 import RecentsContainer from '../../containers/RecentsContainer';
 
+interface State {
+    index: number,
+    routes: { key: string, title: string, icon: string, color: string }[]
+}
 
-export default function MyComponent() {
-    const [state, setState] = useState({
+export default function BottomBarLayout(): ReactElement {
+    const [state, setState] = useState<State>({
         index: 0,
         routes: [
             { key: 'home', title: 'Home', icon: 'home', color: '#3F51B5' },
