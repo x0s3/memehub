@@ -5,7 +5,7 @@ module.exports = {
     mode: 'development',
 
     // Path to the entry file
-    entry: path.join(__dirname, 'src/index.js'),
+    entry: path.join(__dirname, 'src/index.tsx'),
 
     // Path for the output files
     output: {
@@ -21,7 +21,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(js|ts|tsx|web.tsx)$/,
                 exclude: /node_modules[/\\](?!react-native-paper|react-native-vector-icons|react-native-safe-area-view)/,
                 use: {
                     loader: 'babel-loader',
@@ -33,6 +33,7 @@ module.exports = {
                         // The configuration for compilation
                         presets: [
                             ['@babel/preset-env', { useBuiltIns: 'usage' }],
+                            '@babel/preset-typescript',
                             '@babel/preset-react',
                             '@babel/preset-flow',
                         ],
@@ -53,7 +54,7 @@ module.exports = {
         alias: {
             'react-native$': require.resolve('react-native-web'),
         },
-        extensions: ['.web.js', '.js']
+        extensions: ['.web.js', '.js', '.ts', '.tsx', '.web.tsx']
     },
 
     // Development server config

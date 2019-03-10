@@ -10,8 +10,7 @@
     "react-scripts": "2.1.5"
   },
   "scripts": {
-    "start:wp": "webpack-dev-server --open",
-    "start": "react-app-rewired start",
+    "start": "webpack-dev-server --open",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-app-rewired eject"
@@ -31,6 +30,7 @@
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
     "babel-loader": "^8.0.5",
     "babel-plugin-react-native-web": "^0.10.0",
     "file-loader": "^3.0.1",
