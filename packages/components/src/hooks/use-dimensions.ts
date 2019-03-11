@@ -14,13 +14,13 @@ interface UseDimensionProps {
 }
 
 export default function useDimensions(): UseDimensionProps {
-    const [dimensions, setDimensions] = useState({
+    const [dimensions, setDimensions] = useState<UseDimensionProps>({
         screen: Dimensions.get('screen'),
         window: Dimensions.get('window'),
     });
 
     useEffect(() => {
-        Dimensions.addEventListener('change', setDimensions);
+        Dimensions.addEventListener('change', ({ screen, window }) => setDimensions({ screen, window }));
         return () => Dimensions.removeEventListener('change', setDimensions);
     }, []);
 

@@ -12,10 +12,8 @@ export default function Fab(): ReactElement {
             icon={open ? 'close' : 'add'}
             actions={[
                 { icon: 'settings', onPress: () => console.log('Pressed add') },
-                { icon: 'report-problem', label: 'Report a problem', onPress: () => console.log('Pressed report bug') },
                 { icon: 'brush', label: 'Create a meme', onPress: () => console.log('Pressed create meme') },
                 { icon: 'filter-list', label: 'Filters', onPress: () => console.log('Pressed filters') },
-                { icon: 'notifications', label: 'Remind', onPress: () => console.log('Pressed notifications') },
             ]}
             onStateChange={useCallback(({ open }) => setOpen(open), [open])}
             onPress={() => {
