@@ -1,8 +1,12 @@
 import React, { useState, useCallback, ReactElement } from 'react';
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { FAB } from 'react-native-paper';
 
-export default function Fab(): ReactElement {
+interface IFab {
+    filterAction: VoidFunction
+}
+
+export default function Fab({ filterAction }: IFab): ReactElement {
     const [open, setOpen] = useState<boolean>(false);
 
     return (
@@ -11,11 +15,11 @@ export default function Fab(): ReactElement {
             open={open}
             icon={open ? 'close' : 'add'}
             actions={[
-                { icon: 'settings', onPress: () => console.log('Pressed add') },
+                { icon: 'settings', onPress: () => console.log('Pressed settings') },
                 { icon: 'brush', label: 'Create a meme', onPress: () => console.log('Pressed create meme') },
-                { icon: 'filter-list', label: 'Filters', onPress: () => console.log('Pressed filters') },
+                { icon: 'filter-list', label: 'Filters', onPress: filterAction },
             ]}
-            onStateChange={useCallback(({ open }) => setOpen(open), [open])}
+            onStateChange={useCallback(({ open }) => setOpen(open), [setOpen])}
             onPress={() => {
                 if (open) {
                     // do something if the speed dial is open
@@ -30,6 +34,5 @@ const styles = StyleSheet.create({
         position: 'relative',
         margin: 16,
         right: 0,
-        marginBottom: Dimensions.get('screen').height / 10
     },
 });

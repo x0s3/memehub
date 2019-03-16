@@ -12,14 +12,14 @@ export default function App(): ReactElement {
   return (
     <PaperProvider theme={themes[themeIndex].theme}>
       <Welcome />
-      <Portal>
+      {/*<Portal>
         <FAB style={{
           position: 'absolute',
           margin: 16,
           right: 0,
           backgroundColor: '#3F51B5'
         }} icon={'android'} onPress={change} />
-      </Portal>
+      </Portal>*/}
     </PaperProvider>
   )
 }

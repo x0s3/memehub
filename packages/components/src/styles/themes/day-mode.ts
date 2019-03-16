@@ -7,7 +7,7 @@ export const theme: ThemeInterface = {
     dark: false,
     colors: {
         ...DefaultTheme.colors,
-        primary: 'green',
+        primary: '#3F51B5',
         accent: '#3F51B5',
     }
 };
